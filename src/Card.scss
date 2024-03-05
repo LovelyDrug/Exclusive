@@ -1,0 +1,53 @@
+@import './colors.scss';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  height: 350px;
+  width: 270px;
+
+  &__product {
+    display: inline-block;
+    margin: auto;
+  }
+
+  &__image {
+    position: relative;
+    height: 250px;
+    width: 100%;
+    margin: auto;
+    background-color: $c-secondary-1;
+
+    &__icons {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+
+  &__icon {
+    padding: 5px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: $c-primary-1;
+    cursor: pointer;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    font-weight: bold;
+  }
+
+  &__price {
+    color: $c-secondary-accent;
+  }
+}

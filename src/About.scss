@@ -1,0 +1,86 @@
+@import './colors.scss';
+
+.about {
+  position: relative;
+
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; 
+  }
+
+  &__general {
+    &__info {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: left;
+      gap: 40px;
+      padding: 130px 75px 130px 0;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 90px;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        background: url('./images/About-Image.png') no-repeat;
+        background-size: contain;
+        z-index: -1;
+      }
+    }
+
+    &__header {
+      font-size: 54px;
+    }
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      font-size: 24px;
+      width: 50%;
+    }
+  }
+
+  &__money {
+    &__card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      padding: 30px 50px;
+      border: 1px solid rgba($c-text-button, 0.3);
+
+      &__titles {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+      }
+
+      &__title {
+        font-size: 32px;
+      }
+
+      &__subtitle {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__staff {
+    &__cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    padding: 30px 50px;
+    border: 1px solid rgba($c-text-button, 0.3);
+    }
+  }
+}

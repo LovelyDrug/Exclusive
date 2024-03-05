@@ -1,0 +1,92 @@
+@import 'colors.scss';
+
+.icon {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &-insta {
+    background-image: url(./images/Icon-Instagram.svg);
+  }
+  &-facebook {
+    background-image: url(./images/Icon-Facebook.svg);
+  }
+  &-twitter {
+    background-image: url(./images/Icon-Twitter.svg);
+  }
+  &-linkedin {
+    background-image: url(./images/Icon-Linkedin.svg);
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+
+  padding: 80px;
+  height: min-content;
+
+  color: $c-text-1;
+  background-color: $c-text-button;
+  
+  &__info {
+    display: flex;
+    justify-content: center;
+    gap: 87px;
+  }
+
+  &__copyright {
+    color: $c-primary-2;
+    font-size: 16px;
+  }
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+
+  &__name {
+    font-size: 20px;
+  }
+
+  &__email {
+    display: inline-block;
+    width: min-content;
+    padding: 12px 16px;
+    background-color: transparent;
+    border: 1px solid $c-text-1;
+    border-radius: 4px;
+    font-size: 16px;
+    background: url(./images/icon-send.svg) no-repeat;
+    background-position: 95%;
+  }
+
+  &__info {
+    color: $c-primary-1;
+  }
+
+  &__socials {
+    display: flex;
+    gap: 24px;
+  }
+}
+
+.download {
+  display: flex;
+  gap: 8px;
+
+  &__markets {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+}

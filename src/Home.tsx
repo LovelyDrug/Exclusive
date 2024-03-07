@@ -9,6 +9,7 @@ import ellipseFull from './images/icon-Ellipse-full.svg';
 import linkArrowRight from './images/icon-Arrow-right.svg';
 import apple from './images/icon-Apple.svg';
 import phones from './images/apple-phones-ad.png';
+import { categories } from "./Info";
 
 export const Home: FC = () => {
   const card = {
@@ -78,13 +79,13 @@ export const Home: FC = () => {
         </div>
       </div>
       <div className="block block-today">
-        <h5 className="block__title">
+        <h5 className="block__name">
           <div className="block__rectangle"></div>
           Today's
         </h5>
-        <div className="block__header">
+        <div className="block__title">
           <h1 className="block__header__title">Flash sales</h1>
-          <div className="block__header__arrows">
+          <div className="block__title__arrows">
             <img 
               src={leftArrow}
               alt="left"
@@ -100,33 +101,57 @@ export const Home: FC = () => {
         <Card {...card} />
         <button className="button button-red block-today__button">view all products</button>
       </div>
-      <div className="block">
-        <h5 className="block__title">
-          <div className="block__rectangle"></div>
-          Categories
-        </h5>
-        <h1 className="block__header">Browse by category</h1>
+      <div className="block categories">
+        <div className="categories__header">
+          <h5 className="block__name">
+            <div className="block__rectangle"></div>
+            Categories
+          </h5>
+          <h1 className="block__title">
+            Browse by category
+            <div className="block__title__arrows">
+              <img 
+                src={leftArrow}
+                alt="left"
+                className="block__header__arrow"
+              />
+              <img
+                src={rightArrow}
+                alt="right"
+                className="block__header__arrow"
+              />
+            </div>
+          </h1>
+        </div>
+        <div className="categories__list">
+          {categories.map((category, index) => (
+            <div key={index} className="categories__list__item">
+              <img src={category.img} alt={category.alt} className="categories__list__item__image"/>
+              <p className="categories__list__item__name">{category.name}</p>
+              </div>
+          ))}
+        </div>
       </div>
       <div className="block">
-        <h5 className="block__title">
+        <h5 className="block__name">
           <div className="block__rectangle"></div>
           This Month
         </h5>
-        <h1 className="block__header">best selling products</h1>
+        <h1 className="block__title">best selling products</h1>
       </div>
       <div className="block">
-        <h5 className="block__title">
+        <h5 className="block__name">
           <div className="block__rectangle"></div>
           Our Products
         </h5>
-        <h1 className="block__header">Explore our products</h1>
+        <h1 className="block__title">Explore our products</h1>
       </div>
       <div className="block">
-        <h5 className="block__title">
+        <h5 className="block__name">
           <div className="block__rectangle"></div>
           Featured
         </h5>
-        <h1 className="block__header">New arrival</h1>
+        <h1 className="block__title">New arrival</h1>
       </div>
     </div>
   )

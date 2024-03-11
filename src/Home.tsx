@@ -10,13 +10,23 @@ import linkArrowRight from './images/icon-Arrow-right.svg';
 import apple from './images/icon-Apple.svg';
 import phones from './images/apple-phones-ad.png';
 import { categories } from "./Info";
+import { useSelector, useDispatch } from "react-redux";
+import { Product } from "./types/Product";
+
+interface State {
+  shop: {
+    products: Product[];
+    cart: Product[];
+    wishlist: Product[];
+  };
+}
 
 export const Home: FC = () => {
-  const card = {
-    name: 'test card',
-    price: 300,
-    image: 'images/Wish.svg'
-  }
+  const products = useSelector((state: State) => state.shop.products);
+  const cart = useSelector((state: State) => state.shop.cart);
+  const wishlist = useSelector((state: State) => state.shop.wishlist);
+  
+  console.log(cart, wishlist);
 
   return (
     <div className="page__main">
@@ -98,7 +108,22 @@ export const Home: FC = () => {
             />
           </div>
         </div>
-        <Card {...card} />
+        {products.length > 0 ? (
+          <div className="block-today__products">
+            {products.map((card, index) => (
+              <Card
+                key={card.id}
+                card={card}
+                place="card--home"
+              />
+            ))}
+          </div>)
+          : (
+            <div className="block-today__products">
+              <p>Loading...</p>
+            </div>
+          )
+        }
         <button className="button button-red block-today__button">view all products</button>
       </div>
       <div className="block categories">

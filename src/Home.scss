@@ -1,5 +1,4 @@
 @import './colors.scss'; 
-@import './App.scss';
 
 .block {
   display: flex;
@@ -36,8 +35,22 @@
     }
   } 
 
-  &-today__button {
-    margin: auto;
+  &-today {
+    overflow-x: visible;
+
+    &__products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding-bottom: 10vh;
+    align-items: center;
+    gap: 16px;
+    overflow-x: visible;
+    }
+
+    &__button {
+      margin: auto;
+    } 
   }
   
   &__name {

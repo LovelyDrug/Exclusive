@@ -13,20 +13,32 @@ import { Account } from "./Account";
 import { Checkout } from "./Checkout";
 import { Cart } from "./Cart";
 import { useEffect, useState } from "react";
-import { Product } from "./types/Product";
+import { useDispatch, useSelector } from "react-redux";
+import { setProducts } from "./redux/reducer";
 
 function App() {
+  const cart = useSelector((state: any) => state.shop.cart);
+  const wishlist = useSelector((state: any) => state.shop.wishlist);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    fetch('/products.json')
+      .then(response => response.json())
+      .then(data => dispatch(setProducts(data)))
+      .catch(error => console.error(error));
+  }, []);
 
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Header />}>
-          <Route index element={<Home />} />
+          <Route index element={<Home />}/>
           <Route path="contact" element={<Contact />} />
           <Route path="about" element={<About />} />
           <Route path="signup" element={<Signup />} />
           <Route path="login" element={<Login />} />
-          <Route path="wishlist" element={<Wishlist />} />
+          <Route path="wishlist" element={<Wishlist/>} />
           <Route path="account" element={<Account />} />
           <Route path="cart" element={<Cart />} />
           <Route path="checkout" element={<Checkout />} />

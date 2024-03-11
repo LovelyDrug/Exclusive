@@ -38,9 +38,9 @@ export const Header = () => {
             <span className="search__icon icon"></span>
           </label>
           <div className="menu__icons">
-            <a href="#" className="menu__fav icon"></a>
-            <a href="#" className="menu__cart icon"></a>
-            <a href="#" className="menu__acc icon"></a>
+            <Link to="/wishlist" className="menu__fav icon"></Link>
+            <Link to="/cart" className="menu__cart icon"></Link>
+            <Link to="/account" className="menu__acc icon"></Link>
           </div>
         </div>
       </div>

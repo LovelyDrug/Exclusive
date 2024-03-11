@@ -24,6 +24,18 @@ html, body {
   text-transform: capitalize;
 }
 
+.button-white {
+  background-color: $c-primary-1;
+  color: $c-text-button;
+  transition: background-color 1s;
+  border: 1px solid rgba($c-text-button, $alpha: 0.5);
+  transition: color 0.3s;
+
+  &:hover {
+    color: $c-text-2;
+  }
+}
+
 .button-red {
   background-color: $c-secondary-accent;
   color: $c-text-1;

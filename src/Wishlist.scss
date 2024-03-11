@@ -1,0 +1,30 @@
+.wishlist {
+  gap: 80px;
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-weight: normal;
+  }
+
+  &__products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+}

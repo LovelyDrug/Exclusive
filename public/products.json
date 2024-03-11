@@ -1,0 +1,137 @@
+[
+    {
+      "id": 1,
+      "name": "The north coat",
+      "price": 360,
+      "photo": "/images/products/pink_jacket.png",
+      "rating": "100",
+      "colors": "",
+      "discount": "260"
+    },
+    {
+      "id": 2,
+      "name": "Small BookSelf",
+      "price": 360,
+      "photo": "/images/products/bookshelf.png",
+      "rating": "100",
+      "colors": "",
+      "discount": ""
+    },
+    {
+      "id": 3,
+      "name": "CANON EOS DSLR Camera",
+      "price": 360,
+      "photo": "/images/products/camera.png",
+      "rating": "80",
+      "colors": "",
+      "discount": ""
+    },
+    {
+      "id": 4,
+      "name": "Breed Dry Dog Food",
+      "price": 100,
+      "photo": "/images/products/dogfood.png",
+      "rating": "60",
+      "colors": "",
+      "discount": ""
+    },
+    {
+      "id": 5,
+      "name": "ASUS FHD Gaming Laptop",
+      "price": 1160,
+      "photo": "/images/products/laptop.png",
+      "rating": "100",
+      "colors": "",
+      "discount": "960"
+    },
+    {
+      "id": 6,
+      "name": "Curology Product Set",
+      "price": 500,
+      "photo": "/images/products/cream.png",
+      "rating": "80",
+      "colors": "",
+      "discount": ""
+    },
+    {
+      "id": 7,
+      "name": "Kids Electric Car",
+      "price": 960,
+      "photo": "/images/products/car.png",
+      "rating": "100",
+      "colors": "red black",
+      "discount": ""
+    },
+    {
+      "id": 8,
+      "name": "Jr. Zoom Soccer Cleats",
+      "price": 1160,
+      "photo": "/images/products/boots.png",
+      "rating": "100",
+      "colors": "white coral",
+      "discount": ""
+    },
+    {
+      "id": 9,
+      "name": "GP11 Shooter USB Gamepad",
+      "price": 660,
+      "photo": "/images/products/black_gamepad.png",
+      "rating": "90",
+      "colors": "black red",
+      "discount": ""
+    },
+    {
+      "id": 10,
+      "name": "Quilted Satin Jacket",
+      "price": 750,
+      "photo": "/images/products/cyan_jacket.png",
+      "rating": "90",
+      "colors": "blue coral",
+      "discount": ""
+    },
+    {
+      "id": 11,
+      "name": "RGB liquid CPU Cooler",
+      "price": 1960,
+      "photo": "/images/products/videoadapter.png",
+      "rating": "85",
+      "colors": "",
+      "discount": ""
+    },
+    {
+      "id": 12,
+      "name": "Gucci duffle bag",
+      "price": 1160,
+      "photo": "/images/products/gucchi.png",
+      "rating": "65",
+      "colors": "sky coral",
+      "discount": "960"
+    },
+    {
+      "id": 13,
+      "name": "IPS LCD Gaming Monitor",
+      "price": 1160,
+      "photo": "/images/products/monitor.png",
+      "rating": "100",
+      "colors": "",
+      "discount": ""
+    },
+    {
+      "id": 14,
+      "name": "AK-900 Wired Keyboard",
+      "price": 200,
+      "photo": "/images/products/keyboard.png",
+      "rating": "100",
+      "colors": "",
+      "discount": ""
+    },
+    {
+      "id": 15,
+      "name": "HAVIT HV-G92 Gamepad",
+      "price": 560,
+      "photo": "/images/products/red_gamepad.png",
+      "rating": "95",
+      "colors": "",
+      "discount": ""
+    }
+]

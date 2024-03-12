@@ -25,10 +25,17 @@ export const slice = createSlice({
     addToCart: (state, action) => {
       if(state.cart.find((item) => item.id === action.payload.id)) return;
 
-      state.cart = [...state.cart, action.payload];
+      state.cart = [...state.cart, {...action.payload, quantity: 1}];
+    },
+    modifyQuantity: (state, action) => {
+      state.cart = state.cart.map(
+        (item) => item.id === action.payload.id ?
+          {...item, quantity: action.payload.quantity}
+          : item
+      );
     },
     removeFromCart: (state, action) => {
-      state.cart = state.cart.filter((item) => item !== action.payload);
+      state.cart = state.cart.filter((item) => item.id !== action.payload.id);
     },
     addToWishlist: (state, action) => {
       if(state.wishlist.find((item) => item.id === action.payload.id)) return;

@@ -2,6 +2,8 @@ import { FC } from "react";
 import { useSelector } from "react-redux";
 import { Product } from "./types/Product";
 import './Cart.scss';
+import { Link } from "react-router-dom";
+import { CartRow } from "./CartRow";
 
 interface State {
   shop: {
@@ -11,7 +13,7 @@ interface State {
 
 export const Cart: FC = () => {
   const cart = useSelector((state: State) => state.shop.cart);
-
+  
   return (
     <div className="page__main cart">
       <div className="cart__block">
@@ -28,28 +30,11 @@ export const Cart: FC = () => {
             </thead>
             <tbody className="cart__body">
               {cart.map((item) => (
-                <tr key={item.id} className="cart__row">
-                  <td className="cart__name">
-                    <img src={item.photo} alt={item.name} className="cart__image"/>
-                    <p>{item.name}</p>
-                  </td>
-                  <td>{item.price}$</td>
-                  <td>
-                    <input
-                      type="number"
-                      name="quantity"
-                      id="quantity"
-                      min="1"
-                      className="cart__quantityInput"
-                      value={item.quantity}
-                    />
-                  </td>
-                  <td>{item.price}$</td>
-                </tr>
+                <CartRow item={item} key={item.id}/>
               ))}
             </tbody>
             <div className="cart__buttons">
-              <button className="button button-white">return to shop</button>
+              <Link to='/' className="button button-white" >return to shop</Link>
               <button className="button button-white">update cart</button>
             </div>
           </table>
@@ -78,7 +63,10 @@ export const Cart: FC = () => {
                 {cart.reduce((acc, item) => +acc + +item.price, 0)}$
               </p>
             </p>
-          <button className="button button-red">proceed to checkout</button>
+          <Link 
+            to='/checkout'
+            className="button button-red cart__total__button"
+          >proceed to checkout</Link>
         </div>
       </div>
     </div>

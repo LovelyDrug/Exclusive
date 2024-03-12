@@ -5,11 +5,18 @@ export const REMOVE_FROM_WISHLIST = 'REMOVE_PRODUCT_FROM_WISHLIST';
 export const ADD_TO_CART = 'ADD_PRODUCT_TO_CART';
 export const REMOVE_FROM_CART = 'REMOVE_PRODUCT_FROM_CART';
 export const SET_PRODUCTS = 'SET_PRODUCTS';
-
+export const MODIFY_QUANTITY = 'MODIFY_QUANTITY';
 
 export const addProductToCart = (product: Product) => {
   return {
     type: ADD_TO_CART,
+    payload: product,
+  };
+};
+
+export const modifyQuantity = (product: Product, quantity: number) => {
+  return {
+    type: MODIFY_QUANTITY,
     payload: product,
   };
 };

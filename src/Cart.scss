@@ -26,7 +26,31 @@
   }
 
   &__quantityInput {
-    width: 30px;
+    display: inline-block;
+    position: relative;
+    width: 32px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid $c-text-2;
+
+    &::after {
+      content: url('/images/Drop-Up-Small.svg');
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &::before {
+      content: url('/images/Drop-Down-Small.svg');
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      right: 10px;
+      bottom: 50%;
+      transform: translateY(50%);
+    }
   }
   
   &__buttons {
@@ -38,13 +62,21 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    align-content: flex-end;
+
     gap: 8px;
     padding: 32px 24px;
+    width: 500px;
+    
     border-radius: 4px;
     border: 1.5px solid $c-text-button;
 
     &__title {
       font-size: 20px;
+    }
+
+    &__button {
+      width: max-content;
     }
   }
 
@@ -76,6 +108,7 @@
   }
 
   &__row {
+    position: relative;
     height: 100px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -84,5 +117,17 @@
     padding: 24px 40px;
     border-radius: 4px;
     box-shadow: 0 0 5px 1px rgba($c-text-2, 0.3);
+  }
+
+  &__line {
+    position: relative;
+  }
+
+  &__cancel {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 50%;
+    cursor: pointer;
   }
 }

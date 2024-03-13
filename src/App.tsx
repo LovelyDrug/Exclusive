@@ -12,23 +12,30 @@ import { Wishlist } from "./Wishlist";
 import { Account } from "./Account";
 import { Checkout } from "./Checkout";
 import { Cart } from "./Cart";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setProducts } from "./redux/reducer";
+import { setProducts, setUser } from "./redux/reducer";
 
 function App() {
-  const cart = useSelector((state: any) => state.shop.cart);
-  const wishlist = useSelector((state: any) => state.shop.wishlist);
-
   const dispatch = useDispatch();
+  const user = useSelector((state: any) => state.shop.user);
+
+  const newUser = {
+    name: 'John Doe',
+    email: '12342@snail.cim',
+    phone: '123-456-7890',
+    password: 'bf5g5hgb4eg',
+    address: '1234 Main St',
+  };
 
   useEffect(() => {
+    dispatch(setUser(newUser))
     fetch('/products.json')
       .then(response => response.json())
       .then(data => dispatch(setProducts(data)))
       .catch(error => console.error(error));
-  }, []);
-
+    }, []);
+      
   return (
     <BrowserRouter>
       <Routes>

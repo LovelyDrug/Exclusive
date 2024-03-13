@@ -13,9 +13,13 @@ interface State {
 
 export const Cart: FC = () => {
   const cart = useSelector((state: State) => state.shop.cart);
+  const path = window.location.pathname;
   
   return (
     <div className="page__main cart">
+      <p className="page__main__road">
+        Home / {path.slice(1)}
+      </p>
       <div className="cart__block">
         {cart.length === 0 ?
           <p className="cart__empty">Your cart is empty</p>

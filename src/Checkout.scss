@@ -8,6 +8,19 @@
     font-size: 36px;
   }
 
+  &__total {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  &__text {
+    display: flex;
+    justify-content: space-between;
+  }
+
   &__blocks {
     display: flex;
     justify-content: space-between;
@@ -18,18 +31,42 @@
     flex-direction: column;
     align-content: flex-start;
     gap: 32px;
+    
+    &>:not(:nth-child(4)):not(:nth-child(5)) {
+      width: 80%;
+    }
+  }
+
+  &__coupon {
+    display: flex;
+    align-items: self-start;
+    gap: 16px;
   }
 
   &__cart {
     display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 100%;
+    gap: 32px;
+  }
 
+  &__line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__product {
+    display: flex;
+    gap: 16px;
+    align-items: center;
   }
 
   &__block {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    flex-grow: 1;
   }
 
   &__item {
@@ -37,22 +74,32 @@
     flex-direction: column;
     align-items: flex-start;
     color: $c-placeholder;
+    gap: 8px;
   }
 
-  &__input {
-    background-color: $c-secondary-1;
-    border: none;
-    outline: none;
-    border-radius: 4px;
-    padding: 10px;
-    width: 470px;
+  &__image {
+    width: 54px;
+    height: 54px;
+    object-fit: contain;
   }
 
   &__save {
     display: flex;
     gap: 16px;
     align-items: center;
-    
+    margin-top: 24px;
+
+    &__input {
+      appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      border: 2px solid $c-secondary-accent;
+
+      &:checked {
+        background: url('./images/icon-checkbox.svg') center no-repeat;
+      }
+    }
   }
 
   &__form {
@@ -61,4 +108,45 @@
     gap: 32px;
     width: 100%;
   }
+
+  &__button {
+    width: 50%;
+  }
+
+  &__payment {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    &__item {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    &__input {
+      appearance: none;
+      width: 24px;
+      height: 24px;
+      background-color: #fff;
+      border: 2px solid #000; // Change this to your desired color
+      border-radius: 50%;
+    
+      &:checked {
+        background-color: #000; 
+        box-shadow: 0 0 0 3px #fff inset;// Change this to your desired color
+      }
+    
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 4px #fff inset; // Change this to your desired color
+      }
+    }
+  }
+}
+
+.underline {
+  background-color: $c-text-2;
+  height: 1px;
+  width: 100%;
 }

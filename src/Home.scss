@@ -35,10 +35,7 @@
     }
   } 
 
-  &-today {
-    overflow-x: visible;
-
-    &__products {
+  &__products {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
@@ -46,12 +43,12 @@
     align-items: center;
     gap: 16px;
     overflow-x: visible;
-    }
-
-    &__button {
-      margin: auto;
-    } 
   }
+
+  &__button {
+    margin: auto;
+  } 
+
   
   &__name {
     display: flex;
@@ -117,6 +114,7 @@
 .ad {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   padding: 12px 64px;
 
   background-color: $c-text-button;
@@ -177,5 +175,67 @@
     display: flex;
     gap: 12px;
     justify-content: center;
+  }
+}
+
+.newArrival {
+  display: grid;
+  
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px;
+    height: 600px;
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      position: relative;
+      padding: 16px;
+      background-color: $c-text-button;
+      color: $c-text-1;
+      border-radius: 4px;
+      
+      &__image {
+        position: absolute;
+        object-fit: contain;
+        border-radius: 4px;
+
+      }
+
+      &--ps5 {
+        bottom: 0;
+        right: 50%;
+        transform: translateX(50%);
+      }
+
+      &--women>.newArrival__body__item__image {
+        right: 0;
+        transform: translateX(50%);
+        background-color: #0D0D0D;
+      }
+
+      &--gradient {
+        background: radial-gradient($c-placeholder, $c-text-button);
+      }
+
+      &>:not(:first-child) {
+        position: relative;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+.gr {
+  &-1 {
+    grid-area: 1 / 1 / 3 / 3;
+  }
+
+  &-2 {
+    grid-area: 1 / 3 / 2 / 5;
   }
 }

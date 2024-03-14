@@ -9,24 +9,23 @@ import ellipseFull from './images/icon-Ellipse-full.svg';
 import linkArrowRight from './images/icon-Arrow-right.svg';
 import apple from './images/icon-Apple.svg';
 import phones from './images/apple-phones-ad.png';
+import ps5 from './images/ps5.png';
+import women from './images/women.png';
+import speakers from './images/speakers.png';
+import perfume from './images/perfume.png';
 import { categories } from "./Info";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Product } from "./types/Product";
+import { Link } from "react-router-dom";
 
 interface State {
   shop: {
     products: Product[];
-    cart: Product[];
-    wishlist: Product[];
   };
 }
 
 export const Home: FC = () => {
   const products = useSelector((state: State) => state.shop.products);
-  const cart = useSelector((state: State) => state.shop.cart);
-  const wishlist = useSelector((state: State) => state.shop.wishlist);
-  
-  console.log(cart, wishlist);
 
   return (
     <div className="page__main">
@@ -94,23 +93,23 @@ export const Home: FC = () => {
           Today's
         </h5>
         <div className="block__title">
-          <h1 className="block__header__title">Flash sales</h1>
+          <h1 className="block__header">Flash sales</h1>
           <div className="block__title__arrows">
             <img 
               src={leftArrow}
               alt="left"
-              className="block__header__arrow"
+              className="block__title__arrow"
             />
             <img
               src={rightArrow}
               alt="right"
-              className="block__header__arrow"
+              className="block__title__arrow"
             />
           </div>
         </div>
         {products.length > 0 ? (
-          <div className="block-today__products">
-            {products.map((card, index) => (
+          <div className="block__products">
+            {products.filter(item => item.discount).map((card, index) => (
               <Card
                 key={card.id}
                 card={card}
@@ -119,12 +118,12 @@ export const Home: FC = () => {
             ))}
           </div>)
           : (
-            <div className="block-today__products">
+            <div className="block__products">
               <p>Loading...</p>
             </div>
           )
         }
-        <button className="button button-red block-today__button">view all products</button>
+        <button className="button button-red block__button">view all products</button>
       </div>
       <div className="block categories">
         <div className="categories__header">
@@ -138,12 +137,12 @@ export const Home: FC = () => {
               <img 
                 src={leftArrow}
                 alt="left"
-                className="block__header__arrow"
+                className="block__title__arrow"
               />
               <img
                 src={rightArrow}
                 alt="right"
-                className="block__header__arrow"
+                className="block__title__arrow"
               />
             </div>
           </h1>
@@ -157,26 +156,104 @@ export const Home: FC = () => {
           ))}
         </div>
       </div>
-      <div className="block">
+      <div className="block best">
         <h5 className="block__name">
           <div className="block__rectangle"></div>
           This Month
         </h5>
-        <h1 className="block__title">best selling products</h1>
+          <h1 className="block__title">
+            best selling products
+            <button className="button button-red">view all</button>
+          </h1>
+          {products.length > 0 ? (
+          <div className="block__products">
+            {products
+              .filter((product) => +product.rating > 85)
+              .slice(0, 4)
+              .map((card, index) => (
+              <Card
+                key={card.id}
+                card={card}
+                place="card--home"
+              />
+            ))}
+          </div>)
+          : (
+            <div className="block__products">
+              <p>Loading...</p>
+            </div>
+          )
+        }
       </div>
-      <div className="block">
+      <div className="block explore">
         <h5 className="block__name">
           <div className="block__rectangle"></div>
           Our Products
         </h5>
-        <h1 className="block__title">Explore our products</h1>
+        <h1 className="block__title">
+          Explore our products
+          <div className="block__title__arrows">
+            <img 
+              src={leftArrow}
+              alt="left"
+              className="block__title__arrow"
+            />
+            <img
+              src={rightArrow}
+              alt="right"
+              className="block__title__arrow"
+            />
+          </div>
+        </h1>
+        <div className="block__products">
+          {products.length > 0 ? (
+            products.slice(0, 8).map((card, index) => (
+              <Card
+                key={card.id}
+                card={card}
+                place="card--home"
+              />
+            ))
+          ) : (
+            <p>Loading...</p>
+          )}
+        </div>
+        <button className="button button-red block__button">view all products</button>
       </div>
-      <div className="block">
-        <h5 className="block__name">
-          <div className="block__rectangle"></div>
-          Featured
-        </h5>
-        <h1 className="block__title">New arrival</h1>
+      <div className="block newArrival">
+        <div className="block__header">
+          <h5 className="block__name">
+            <div className="block__rectangle"></div>
+            Featured
+          </h5>
+          <h1 className="block__title">New arrival</h1>
+        </div>
+        <div className="newArrival__body">
+          <div className="newArrival__body__item gr-1">
+            <img src={ps5} alt="ps5" className="newArrival__body__item__image newArrival__body__item--ps5"/>
+            <p className="newArrival__body__item__title">PlayStation 5</p>
+            <p className="newArrival__body__item__subtitle">Black and White version of the PS5 coming out on sale.</p>
+            <Link to='/wishlist' className="newArrival__body__item__link">shop now</Link>
+          </div>
+          <div className="newArrival__body__item gr-2 newArrival__body__item--women">
+            <img src={women} alt="women" className="newArrival__body__item__image"/>
+            <p className="newArrival__body__item__title">Women’s Collections</p>
+            <p className="newArrival__body__item__subtitle">Featured woman collections that give you another vibe.</p>
+            <Link to='/wishlist' className="newArrival__body__item__link">shop now</Link>
+          </div>
+          <div className="newArrival__body__item gr-3 newArrival__body__item--gradient">
+            <img src={speakers} alt="speakers" className="newArrival__body__item__image"/>
+            <p className="newArrival__body__item__title">Speakers</p>
+            <p className="newArrival__body__item__subtitle">Amazon wireless speakers</p>
+            <Link to='/wishlist' className="newArrival__body__item__link">shop now</Link>
+          </div>
+          <div className="newArrival__body__item gr-4 newArrival__body__item--gradient">
+            <img src={perfume} alt="perfume" className="newArrival__body__item__image"/>
+            <p className="newArrival__body__item__title">Perfume</p>
+            <p className="newArrival__body__item__subtitle">GUCCI INTENSE OUD EDP</p>
+            <Link to='/wishlist' className="newArrival__body__item__link">shop now</Link>
+          </div>
+        </div>
       </div>
     </div>
   )

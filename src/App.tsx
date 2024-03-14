@@ -12,13 +12,13 @@ import { Wishlist } from "./Wishlist";
 import { Account } from "./Account";
 import { Checkout } from "./Checkout";
 import { Cart } from "./Cart";
-import { useEffect } from "react";
+import { ProductPage } from "./ProductPage";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setProducts, setUser } from "./redux/reducer";
 
 function App() {
   const dispatch = useDispatch();
-  const user = useSelector((state: any) => state.shop.user);
 
   const newUser = {
     name: 'John Doe',
@@ -49,6 +49,7 @@ function App() {
           <Route path="account" element={<Account />} />
           <Route path="cart" element={<Cart />} />
           <Route path="checkout" element={<Checkout />} />
+          <Route path="product/:id" element={<ProductPage />}/>
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>

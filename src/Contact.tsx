@@ -29,7 +29,7 @@ export const Contact: FC = () => {
           </div>
         </div>
       </div>
-        <form action="submit" className="contacts__form">
+      <form action="submit" className="contacts__form">
           <div className="contacts__form__personal-info">
             <input
               type="text"
@@ -58,7 +58,7 @@ export const Contact: FC = () => {
             className="contacts__form__input contacts__form__textarea"
           />
           <button className="button button-red contacts__form__button">Sent Message</button>
-        </form>
+      </form>
     </div>
   )
 }

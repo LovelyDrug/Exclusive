@@ -1,10 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Product } from "../types/Product";
+import { User } from "../types/User";
 
 interface State {
   cart: Product[];
   wishlist: Product[];
-  user: any;
+  user: User | null;
   products: Product[];
 }
 

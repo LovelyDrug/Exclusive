@@ -1,16 +1,11 @@
 import { FC } from "react";
 import { useSelector } from "react-redux";
 import './Account.scss';
+import { User } from "./types/User";
 
 interface State {
   shop: {
-    user: {
-      name: string;
-      email: string;
-      phone: string;
-      password: string;
-      address: string;
-    };
+    user: User;
   };
 }
 
@@ -44,7 +39,7 @@ export const Account: FC = () => {
           <h3 className="account__sidebar__title">My WishList</h3>
         </div>
         <div className="account__edit">
-          <h1 className="account__edit__title">Edit your profile</h1>
+          <h1 className="account__edit__name">Edit your profile</h1>
           <form className="account__edit__form">
             <div className="account__edit__info">
               <div className="account__edit__item">
@@ -88,8 +83,8 @@ export const Account: FC = () => {
                 />
               </div>
             </div>
+            <p className="account__edit__title">password changes</p>
             <div className="account__edit__passwords">
-              <p className="account__edit__passwords__title">password changes</p>
               <div className="account__edit__item">
                 <input
                   type="password"
@@ -108,7 +103,7 @@ export const Account: FC = () => {
                   placeholder="New password"
                 />
               </div>
-              <div className="account__edit__item input">
+              <div className="account__edit__item">
                 <input
                   type="password"
                   id="confirmPassword"

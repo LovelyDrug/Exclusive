@@ -1,0 +1,62 @@
+@import 'colors.scss';
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+
+  &-color {
+    width: 20px;
+    height: 20px;
+
+    &-small {
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  &-white, &-black {
+    opacity: 0;
+  }
+
+  &-white {
+    width: 16px;
+    height: 16px;
+    background-color: $c-primary-1;
+  }
+
+  &-black {
+    width: 20px;
+    height: 20px;
+    background-color: $c-text-button;
+  }
+}
+
+$circle-left: 100px;
+$circle-padding: 30px;
+
+.colorCircle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  
+  &:first-of-type {
+    left: $circle-left;
+  }
+
+  @for $i from 2 through 5 {
+    &:nth-of-type(#{$i}) {
+      left: $circle-left + $circle-padding * ($i - 1); // add width of circle into formula
+    }
+  }
+
+  &--active {
+    .circle-white, .circle-black {
+      opacity: 100%;
+    }
+  }
+}

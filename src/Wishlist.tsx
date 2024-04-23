@@ -19,14 +19,10 @@ export const Wishlist: FC = () => {
   const cart = useSelector((state: State) => state.shop.cart);
   const dispatch = useDispatch();
 
-  console.log(wishlist);
-
   const addAllToCart = () => {
     wishlist.forEach((product) => {
       const productInCart = cart.find((item) => item.id === product.id);
-      if (productInCart) {
-        productInCart.quantity += 1;
-      } else {
+      if (!productInCart) {
         dispatch(addToCart({ ...product, quantity: 1 }));
       }
 

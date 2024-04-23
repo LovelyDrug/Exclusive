@@ -1,0 +1,232 @@
+@import 'colors.scss';
+
+.product {
+  gap: 80px;
+
+  &__header {
+    font-size: 14px;
+    color: $c-text-2;
+
+    &__product {
+      color: $c-text-button;
+    }
+  }
+
+  &__details {
+    display: flex;
+    gap: 70px;
+
+    &__images {
+      display: flex;
+      gap: 30px;
+    }
+
+    &__image {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(3);
+      padding: 27px;
+    }
+
+    &__smallImages {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &__bigImage {
+      position: relative;
+      width: 500px;
+      height: 600px;
+      background-color: $c-secondary-1;
+      object-position: center;
+      object-fit: contain;
+    }
+
+    &__smallImage {
+      width: 170px;
+      height: 138px;
+      background-color: $c-secondary-1;
+    }
+  }
+
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    &__main {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &__title {
+      font-size: 24px;
+    }
+    
+    &__price {
+      font-size: 24px;
+      font-weight: regular;
+    }
+
+    &__description {
+      font-size: 14px;
+    }
+
+    &__addition {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    &__sizes {
+      display: flex;
+      gap: 24px;
+
+      &__buttons {
+        display: flex;
+        gap: 16px;
+      }
+
+      &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+        border: 1px solid rgba($c-text-button, 0.5);
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 500;
+        width: 32px;
+        height: 32px;
+
+        transition: all 0.3s ease;
+
+        &:hover, &--active {
+          background-color: rgba($c-secondary-accent, 1.0);
+          border: 1px solid rgba($c-secondary-accent, 1.0);
+          color: $c-text-1;
+        }
+
+        &:active {
+          transform: scale(0.9);
+        }
+      }
+    }
+
+    &__coolStuff {
+      &__coolButtons {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      &__quantity {
+        display: flex;
+        align-items: center;
+        height: 44px;
+        line-height: 44px;
+
+        &>* {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          padding: 8px;
+          height: 100%;
+        }
+
+        &__input {
+          width: 5rem;
+          text-align: center;
+          border: 1px solid rgba($c-text-button, 0.5);
+          border-radius: 0;
+          font-size: 20px;
+        }
+
+        &__minus {
+          border-radius: 4px 0 0 4px;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background-color: rgba($c-secondary-accent, 1.0);
+          }
+        }
+
+        &__plus {
+          border-radius: 0 4px 4px 0;
+        }
+      }
+    }
+
+    &__coolBlocks {
+      display: flex;
+      flex-direction: column;
+      border-radius: 4px;
+      border: 1px solid rgba($c-text-button, 0.5);
+    }
+
+    &__coolBlock {
+      display: flex;
+      gap: 16px;
+      padding: 16px;
+      align-items: center;
+
+      &:first-of-type {
+        border-bottom: 1px solid rgba($c-text-button, 0.5);
+      }
+
+      &__title {
+        font-size: 16px;
+      }
+
+      &__subtitle {
+        font-size: 12px;
+      }
+      
+      &__text a {
+        color: $c-text-button;
+        text-decoration: underline;
+      }
+    }
+
+    &__colors {
+      position: relative;
+      display: flex;
+      gap: 24px;
+    }
+  }
+
+  &__related {
+    &__title {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 16px;
+      color: $c-secondary-accent;
+      margin-bottom: 60px;
+    }
+
+    &__items{
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+    }
+
+
+  }
+}
+
+.button-icon {
+  
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  border-radius: 4px;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+}

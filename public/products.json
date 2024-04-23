@@ -5,8 +5,9 @@
       "price": 360,
       "photo": "/images/products/pink_jacket.png",
       "rating": "100",
-      "colors": "",
-      "discount": "260"
+      "colors": ["pink", "cyan"],
+      "discount": "30",
+      "description": "The north coat with a signature logo print, a top zip fastening, a detachable and adjustable shoulder strap, top handles, a main internal compartment, an internal zipped pocket, an internal logo patch, a front logo patch and a front zip pocket."
     },
     {
       "id": 2,
@@ -14,8 +15,9 @@
       "price": 360,
       "photo": "/images/products/bookshelf.png",
       "rating": "100",
-      "colors": "",
-      "discount": "300"
+      "colors": [],
+      "discount": "30",
+      "description": "Small BookSelf with a signature logo print, a top zip fastening, a detachable and adjustable shoulder strap, top handles, a main internal compartment, an internal zipped pocket, an internal logo patch, a front logo patch and a front zip pocket."
     },
     {
       "id": 3,
@@ -23,8 +25,9 @@
       "price": 360,
       "photo": "/images/products/camera.png",
       "rating": "80",
-      "colors": "",
-      "discount": ""
+      "colors": [],
+      "discount": "25",
+      "description": "CANON EOS DSLR Camera with a signature logo print, a top zip fastening, a detachable and adjustable shoulder strap, top handles, a main internal compartment, an internal zipped pocket, an internal logo patch, a front logo patch and a front zip pocket."
     },
     {
       "id": 4,
@@ -32,8 +35,9 @@
       "price": 100,
       "photo": "/images/products/dogfood.png",
       "rating": "60",
-      "colors": "",
-      "discount": ""
+      "colors": [],
+      "discount": "",
+      "description": "Breed Dry Dog Food with a signature logo print, a top zip fastening, a detachable and adjustable shoulder strap, top handles, a main internal compartment, an internal zipped pocket, an internal logo patch, a front logo patch and a front zip pocket."
     },
     {
       "id": 5,
@@ -41,8 +45,9 @@
       "price": 1160,
       "photo": "/images/products/laptop.png",
       "rating": "100",
-      "colors": "",
-      "discount": "960"
+      "colors": [],
+      "discount": "15",
+      "description": "ASUS FHD Gaming Laptop with a signature logo print, a top zip fastening, a detachable and adjustable shoulder strap, top handles, a main internal compartment, an internal zipped pocket, an internal logo patch, a front logo patch and a front zip pocket."
     },
     {
       "id": 6,
@@ -50,8 +55,9 @@
       "price": 500,
       "photo": "/images/products/cream.png",
       "rating": "80",
-      "colors": "",
-      "discount": ""
+      "colors": [],
+      "discount": "50",
+      "description": "Curology Product Set with a signature logo print, a top zip fastening, a detachable and adjustable shoulder strap, top handles, a main internal compartment, an internal zipped pocket, an internal logo patch, a front logo patch and a front zip pocket."
     },
     {
       "id": 7,
@@ -59,8 +65,9 @@
       "price": 960,
       "photo": "/images/products/car.png",
       "rating": "100",
-      "colors": "red black",
-      "discount": ""
+      "colors": ["red", "black"],
+      "discount": "35",
+      "description": "Kids Electric Car with a signature logo print, a top zip fastening, a detachable and adjustable shoulder strap, top handles, a main internal compartment, an internal zipped pocket, an internal logo patch, a front logo patch and a front zip pocket."
     },
     {
       "id": 8,
@@ -68,8 +75,9 @@
       "price": 1160,
       "photo": "/images/products/boots.png",
       "rating": "100",
-      "colors": "white coral",
-      "discount": ""
+      "colors": ["white", "coral"],
+      "discount": "",
+      "description": "Jr. Zoom Soccer Cleats with a signature logo print, a top zip fastening, a detachable and adjustable shoulder strap, top handles, a main internal compartment, an internal zipped pocket, an internal logo patch, a front logo patch and a front zip pocket."
     },
     {
       "id": 9,
@@ -77,8 +85,9 @@
       "price": 660,
       "photo": "/images/products/black_gamepad.png",
       "rating": "90",
-      "colors": "black red",
-      "discount": ""
+      "colors": ["black", "red"],
+      "discount": "",
+      "description": "GP11 Shooter USB Gamepad with a signature logo print, a top zip fastening, a detachable and adjustable shoulder strap, top handles, a main internal compartment, an internal zipped pocket, an internal logo patch, a front logo patch and a front zip pocket."
     },
     {
       "id": 10,
@@ -86,8 +95,9 @@
       "price": 750,
       "photo": "/images/products/cyan_jacket.png",
       "rating": "90",
-      "colors": "blue coral",
-      "discount": ""
+      "colors": ["blue", "coral"],
+      "discount": "",
+      "description": "Quilted Satin Jacket with a signature logo print, a top zip fastening, a detachable and adjustable shoulder strap, top handles, a main internal compartment, an internal zipped pocket, an internal logo patch, a front logo patch and a front zip pocket."
     },
     {
       "id": 11,
@@ -95,8 +105,9 @@
       "price": 1960,
       "photo": "/images/products/videoadapter.png",
       "rating": "85",
-      "colors": "",
-      "discount": ""
+      "colors": [],
+      "discount": "",
+      "description": "RGB liquid CPU Cooler 240mm radiator low noise, 2x 120mm RGB PWM fans, 16.8 million colors, 4-pin PWM, 4-pin RGB, 800-1900 RPM, 17.6-31.3 dBA, 73.3 CFM, 2.7 mmH2O, 4.2 W, 12 V, 0.35 A, 276x120x27mm, 1.32 kg, 3 years warranty"
     },
     {
       "id": 12,
@@ -104,8 +115,9 @@
       "price": 1160,
       "photo": "/images/products/gucchi.png",
       "rating": "65",
-      "colors": "sky coral",
-      "discount": "960"
+      "colors": ["sky", "coral"],
+      "discount": "10",
+      "description": "Gucci duffle bag with a signature logo print, a top zip fastening, a detachable and adjustable shoulder strap, top handles, a main internal compartment, an internal zipped pocket, an internal logo patch, a front logo patch and a front zip pocket."
     },
     {
       "id": 13,
@@ -113,8 +125,9 @@
       "price": 1160,
       "photo": "/images/products/monitor.png",
       "rating": "100",
-      "colors": "",
-      "discount": ""
+      "colors": [],
+      "discount": "",
+      "description": "IPS LCD Gaming Monitor 144Hz refresh rate, 1ms response time, 1920x1080 resolution, 24 inch display, 16:9 aspect ratio, 1000:1 contrast ratio, 250cd/m2 brightness, 178° viewing angle, 16.7M color support, 2x HDMI, 1x DisplayPort, 1x Audio Out, 1x Headphone Out, 1x USB 3.0, 1x USB 2.0, 1x USB Type-B, 1x Power Port, 1x Power Switch, 1x Kensington Lock, 1x VESA Mount, 1x Stand, 1x Power Cable, 1x HDMI Cable, 1x DisplayPort Cable, 1x USB 3.0 Cable, 1x USB Type-B Cable, 1x User Manual, 1x Warranty Card, 1x CD"
     },
     {
       "id": 14,
@@ -122,8 +135,9 @@
       "price": 200,
       "photo": "/images/products/keyboard.png",
       "rating": "100",
-      "colors": "",
-      "discount": ""
+      "colors": [],
+      "discount": "",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
       "id": 15,
@@ -131,7 +145,8 @@
       "price": 560,
       "photo": "/images/products/red_gamepad.png",
       "rating": "95",
-      "colors": "",
-      "discount": ""
+      "colors": [],
+      "discount": "",
+      "description": "PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive."
     }
 ]

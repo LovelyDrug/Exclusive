@@ -3,14 +3,32 @@
 @font-face {
   font-family: Poppins;
   src: url(fonts/Poppins-Regular.ttf);
+  font-weight: normal;  
 }
 
-html, body {
+@font-face {
+  font-family: Poppins;
+  src: url(fonts/Poppins-Bold.ttf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url(fonts/Poppins-Light.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url(fonts/Poppins-Medium.ttf);
+  font-weight: 500;
+}
+
+* {
   font-family: Poppins, sans-serif;
   box-sizing: border-box;
   margin: 0px;
   padding: 0;
-  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -21,18 +39,34 @@ html, body {
   cursor: pointer;
   line-height: 24px;
   font-size: 16px;
+  font-weight: normal;
   text-transform: capitalize;
-}
 
-.button-white {
-  background-color: $c-primary-1;
-  color: $c-text-button;
-  transition: background-color 1s;
-  border: 1px solid rgba($c-text-button, $alpha: 0.5);
-  transition: color 0.3s;
+  &-white {
+    background-color: $c-primary-1;
+    color: $c-text-button;
+    transition: background-color 1s;
+    border: 1px solid rgba($c-text-button, $alpha: 0.5);
+    transition: color 0.3s;
 
-  &:hover {
-    color: $c-text-2;
+    &:hover {
+      color: $c-text-2;
+    }
+  }
+
+  &-small {
+    padding: 10px 48px;
+  }
+
+  &-red {
+    background-color: $c-secondary-accent;
+    color: $c-text-1;
+    transition: background-color 1s;
+    border: 0;
+  
+    &:hover {
+      background-color: $c-denied-hover;
+    }
   }
 }
 
@@ -45,16 +79,6 @@ html, body {
   width: 470px;
 }
 
-.button-red {
-  background-color: $c-secondary-accent;
-  color: $c-text-1;
-  transition: background-color 1s;
-  border: 0;
-
-  &:hover {
-    background-color: $c-denied-hover;
-  }
-}
 
 .arrow-up {
   position: fixed;
@@ -64,7 +88,6 @@ html, body {
   width: 46px;
   background: url('./images/UpArrow.svg') no-repeat;
   background-size: 46px;
-
 }
 
 .page {
@@ -72,7 +95,6 @@ html, body {
   &__main {
     display: flex;
     flex-direction: column;
-    gap: 140px;
 
     margin-top: 60px;
     padding: 0 140px;
@@ -206,6 +228,12 @@ html, body {
 .logo {
   display: inline-block;
   height: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .categories {
@@ -261,6 +289,12 @@ html, body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 }
 
 .last-link {
@@ -283,15 +317,33 @@ html, body {
   }
 
   &__fav {
+    position: relative;
     background-image: url(images/Wish.svg);
   }
 
   &__cart {
+    position: relative;
     background-image: url(images/Cart.svg);
   }
 
   &__acc {
     background-image: url(images/UserWhite.svg);
+  }
+
+  &--full::after {
+    content: attr(data-content);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    right: -5px;
+    width: 16px;
+    height: 16px;
+    background-color: $c-secondary-accent;
+    border-radius: 50%;
+    color: $c-text-1;
+    font-size: 12px;
   }
 }
 

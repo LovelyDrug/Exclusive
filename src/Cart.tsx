@@ -37,10 +37,12 @@ export const Cart: FC = () => {
                 <CartRow item={item} key={item.id}/>
               ))}
             </tbody>
-            <div className="cart__buttons">
+            <tfoot className="cart__footer">
+            <tr className="cart__buttons">
               <Link to='/' className="button button-white" >return to shop</Link>
               <button className="button button-white">update cart</button>
-            </div>
+            </tr>
+            </tfoot>
           </table>
         }
       </div>
@@ -51,22 +53,22 @@ export const Cart: FC = () => {
         </div>
         <div className="cart__total">
             <h3 className="cart__total__title">Cart total</h3>
-            <p className="cart__text cart--underlined">
+            <div className="cart__text cart--underlined">
               <p>Subtotal:</p>
               <p className="cart__price">
-                {cart.reduce((acc, item) => +acc + +item.price, 0)}$
+                {cart.reduce((acc, item) => +acc + +item.price * item.quantity, 0)}$
               </p>
-            </p>
-            <p className="cart__text cart--underlined">
+            </div>
+            <div className="cart__text cart--underlined">
               <p>Shipping:</p>
               <p className="cart__price">Free</p>
-            </p>
-            <p className="cart__text">
+            </div>
+            <div className="cart__text">
               <p>Total:</p>
               <p>
-                {cart.reduce((acc, item) => +acc + +item.price, 0)}$
+                {cart.reduce((acc, item) => +acc + +item.price * item.quantity, 0)}$
               </p>
-            </p>
+            </div>
           <Link 
             to='/checkout'
             className="button button-red cart__total__button"

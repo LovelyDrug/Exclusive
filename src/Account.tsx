@@ -6,11 +6,15 @@ import { User } from "./types/User";
 interface State {
   shop: {
     user: User;
+    users: User[];
   };
 }
 
 export const Account: FC = () => {
   const user = useSelector((state: State) => state.shop.user);
+  const users = useSelector((state: State) => state.shop.users);
+
+  console.log(users, user);
 
   return (
     <div className="page__main account">
@@ -49,7 +53,7 @@ export const Account: FC = () => {
                   id="firstName"
                   name="firstName"
                   className="account__edit__input input"
-                  placeholder={user.name.split(' ')[0]}
+                  placeholder={user.name.split(' ')[0] ? user.name.split(' ')[0] : user.name}
                 />
               </div>
               <div className="account__edit__item">
@@ -59,7 +63,7 @@ export const Account: FC = () => {
                   id="lastName"
                   name="lastName"
                   className="account__edit__input input"
-                  placeholder={user.name.split(' ')[1]}
+                  placeholder={user.name.split(' ')[1] ? user.name.split(' ')[1] : 'Add your last name'}
                 />
               </div>
               <div className="account__edit__item">
@@ -79,7 +83,7 @@ export const Account: FC = () => {
                   id="address"
                   name="address"
                   className="account__edit__input input"
-                  placeholder={user.address}
+                  placeholder={user.address ? user.address : 'Add your address'}
                 />
               </div>
             </div>

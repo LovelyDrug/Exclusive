@@ -1,11 +1,15 @@
 import { Product } from "../types/Product";
+import { User } from "../types/User";
 
-export const ADD_TO_WISHLIST = 'ADD_PRODUCT_TO_WISHLIST';
-export const REMOVE_FROM_WISHLIST = 'REMOVE_PRODUCT_FROM_WISHLIST';
-export const ADD_TO_CART = 'ADD_PRODUCT_TO_CART';
-export const REMOVE_FROM_CART = 'REMOVE_PRODUCT_FROM_CART';
-export const SET_PRODUCTS = 'SET_PRODUCTS';
-export const MODIFY_QUANTITY = 'MODIFY_QUANTITY';
+const ADD_TO_WISHLIST = 'ADD_PRODUCT_TO_WISHLIST';
+const REMOVE_FROM_WISHLIST = 'REMOVE_PRODUCT_FROM_WISHLIST';
+const ADD_TO_CART = 'ADD_PRODUCT_TO_CART';
+const REMOVE_FROM_CART = 'REMOVE_PRODUCT_FROM_CART';
+const SET_PRODUCTS = 'SET_PRODUCTS';
+const MODIFY_QUANTITY = 'MODIFY_QUANTITY';
+const SET_USER = 'SET_USER';
+const ADD_NEW_USER = 'ADD_NEW_USER';
+
 
 export const addProductToCart = (product: Product) => {
   return {
@@ -14,10 +18,24 @@ export const addProductToCart = (product: Product) => {
   };
 };
 
+export const setUser = (user: User) => {
+  return {
+    type: SET_USER,
+    payload: user,
+  };
+};
+
+export const addNewUser = (user: User) => {
+  return {
+    type: ADD_NEW_USER,
+    payload: user,
+  };
+}
+
 export const modifyQuantity = (product: Product, quantity: number) => {
   return {
     type: MODIFY_QUANTITY,
-    payload: product,
+    payload: { ...product, quantity },
   };
 };
 

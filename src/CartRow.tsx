@@ -1,25 +1,37 @@
-import { FC, useState } from "react"
-import { removeFromCart } from "./redux/reducer"
+import { FC, useCallback, useState } from "react";
+import { removeFromCart, modifyQuantity } from "./redux/reducer";
 import { Product } from "./types/Product";
-import cancel from './images/icon-Cancel.svg'
-import { useDispatch } from "react-redux";
-import { modifyQuantity } from "./redux/actions";
+import cancel from './images/icon-Cancel.svg';
+import up from './images/Drop-Up-Small.svg';
+import down from './images/Drop-Down-Small.svg';
+import { useDispatch, useSelector } from "react-redux";
 
 interface Props {
   item: Product;
 }
 
+interface State {
+  shop: {
+    cart: Product[];
+  };
+}
+
 export const CartRow: FC<Props> = ({ item }) => {
-  const [currentQuantity, setQuantity] = useState(item.quantity);
+  const quantity = useSelector((state: State) => state.shop.cart.find((cartItem) => cartItem.id === item.id)?.quantity);
+  const [currentQuantity, setQuantity] = useState(quantity || 1);
   const dispatch = useDispatch();
   
-  const changeQuantity = (item: Product, quantity: string) => {
-    setQuantity(+quantity);
-    dispatch(modifyQuantity(item, currentQuantity));
-  };
+  const changeQuantity = useCallback((item: Product, quantity: number) => {
+    if (quantity < 1) {
+      return;
+    }
+    setQuantity(quantity);
+    dispatch(modifyQuantity({...item, quantity}));
+  }, [currentQuantity]);
+
 
   return (
-    <div className="cart__line">
+    <>
       <tr key={item.id} className="cart__row">
         <td className="cart__name">
           <img src={item.photo} alt={item.name} className="cart__image"/>
@@ -27,24 +39,43 @@ export const CartRow: FC<Props> = ({ item }) => {
         </td>
         <td>{item.price}$</td>
         <td>
-          <input
-            type="number"
-            name="quantity"
-            id="quantity"
-            min="1"
-            className="cart__quantityInput"
-            value={currentQuantity}
-            onChange={(e) => changeQuantity(item, e.target.value)}
-            
-          />
+          <div className="cart__quantity">
+            <img
+              src={up}
+              alt="up"
+              className="cart__quantityArrow up"
+              onClick={() => changeQuantity(item, currentQuantity + 1)}
+            />
+            <input
+              type="number"
+              name="quantity"
+              id="quantity"
+              min="1"
+              className="cart__quantityInput"
+              value={currentQuantity}
+              disabled
+            />
+            <img
+              src={down}
+              alt="down"
+              className="cart__quantityArrow down"
+              onClick={() => {
+                if (currentQuantity > 1) {
+                  changeQuantity(item, currentQuantity - 1);
+                }
+              }}
+            />
+          </div>
         </td>
         <td>{item.price * currentQuantity}$</td>
+        <td>
+          <img
+            src={cancel}
+            alt="cancel"
+            className="cart__cancel"
+            onClick={() => dispatch(removeFromCart(item))}
+          />
+        </td>
       </tr>
-      <img
-        src={cancel}
-        alt="cancel"
-        className="cart__cancel"
-        onClick={() => dispatch(removeFromCart(item))}
-      />
-    </div>
+    </>
   )}

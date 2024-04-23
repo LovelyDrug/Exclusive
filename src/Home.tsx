@@ -2,6 +2,7 @@ import { FC } from "react";
 import './Home.scss';
 import './App.scss';
 import { Card } from './Card';
+
 import leftArrow from './images/LeftArrow.svg';
 import rightArrow from './images/RightArrow.svg'
 import ellipseHollow from './images/icon-Ellipse-hollow.svg';
@@ -13,7 +14,9 @@ import ps5 from './images/ps5.png';
 import women from './images/women.png';
 import speakers from './images/speakers.png';
 import perfume from './images/perfume.png';
-import { categories } from "./Info";
+import JBL from './images/JBL.png';
+
+import { categories, services } from "./Info";
 import { useSelector } from "react-redux";
 import { Product } from "./types/Product";
 import { Link } from "react-router-dom";
@@ -125,7 +128,7 @@ export const Home: FC = () => {
         }
         <button className="button button-red block__button">view all products</button>
       </div>
-      <div className="block categories">
+      <div className="block block-categories categories">
         <div className="categories__header">
           <h5 className="block__name">
             <div className="block__rectangle"></div>
@@ -156,7 +159,7 @@ export const Home: FC = () => {
           ))}
         </div>
       </div>
-      <div className="block best">
+      <div className="block block-best best">
         <h5 className="block__name">
           <div className="block__rectangle"></div>
           This Month
@@ -170,7 +173,7 @@ export const Home: FC = () => {
             {products
               .filter((product) => +product.rating > 85)
               .slice(0, 4)
-              .map((card, index) => (
+              .map((card) => (
               <Card
                 key={card.id}
                 card={card}
@@ -185,7 +188,42 @@ export const Home: FC = () => {
           )
         }
       </div>
-      <div className="block explore">
+      <div className="block-second-ad second-ad">
+        <div className="second-ad__wrap">
+          <div className="second-ad__details">
+            <p className="second-ad__header">Categories</p>
+            <h1 className="second-ad__title">Enhance Your Music Experience</h1>
+            <div className="second-ad__timer">
+              <div className="second-ad__timer__circle">
+                <p className="second-ad__timer__number">05</p>
+                <p className="second-ad__timer__text">days</p>
+              </div>
+              <div className="second-ad__timer__circle">
+                <p className="second-ad__timer__number">23</p>
+                <p className="second-ad__timer__text">hours</p>
+              </div>
+              <div className="second-ad__timer__circle">
+                <p className="second-ad__timer__number">59</p>
+                <p className="second-ad__timer__text">minutes</p>
+              </div>
+              <div className="second-ad__timer__circle">
+                <p className="second-ad__timer__number">35</p>
+                <p className="second-ad__timer__text">seconds</p>
+              </div>
+            </div>
+            <button className="second-ad__button button">buy now!</button>
+          </div>
+          <div className="second-ad__image">
+            <div className="second-ad__image__radiant"></div>
+            <img
+              src={JBL}
+              alt="JBL"
+              className="second-ad__image__img"
+            />
+          </div>
+        </div>
+      </div>
+      <div className="block block-explore explore">
         <h5 className="block__name">
           <div className="block__rectangle"></div>
           Our Products
@@ -220,7 +258,7 @@ export const Home: FC = () => {
         </div>
         <button className="button button-red block__button">view all products</button>
       </div>
-      <div className="block newArrival">
+      <div className="block block-newArrival newArrival">
         <div className="block__header">
           <h5 className="block__name">
             <div className="block__rectangle"></div>
@@ -229,31 +267,42 @@ export const Home: FC = () => {
           <h1 className="block__title">New arrival</h1>
         </div>
         <div className="newArrival__body">
-          <div className="newArrival__body__item gr-1">
+          <div className="newArrival__body__item ps5 gr-1">
             <img src={ps5} alt="ps5" className="newArrival__body__item__image newArrival__body__item--ps5"/>
             <p className="newArrival__body__item__title">PlayStation 5</p>
-            <p className="newArrival__body__item__subtitle">Black and White version of the PS5 coming out on sale.</p>
+            <p className="newArrival__body__item__subtitle">Black and White version of the PS5 <br/> coming out on sale.</p>
             <Link to='/wishlist' className="newArrival__body__item__link">shop now</Link>
           </div>
           <div className="newArrival__body__item gr-2 newArrival__body__item--women">
             <img src={women} alt="women" className="newArrival__body__item__image"/>
             <p className="newArrival__body__item__title">Women’s Collections</p>
-            <p className="newArrival__body__item__subtitle">Featured woman collections that give you another vibe.</p>
+            <p className="newArrival__body__item__subtitle">Featured woman collections that<br/> give you another vibe.</p>
             <Link to='/wishlist' className="newArrival__body__item__link">shop now</Link>
           </div>
-          <div className="newArrival__body__item gr-3 newArrival__body__item--gradient">
+          <div className="newArrival__body__item newArrival__body__item--small gr-3 newArrival__body__item--gradient">
             <img src={speakers} alt="speakers" className="newArrival__body__item__image"/>
             <p className="newArrival__body__item__title">Speakers</p>
             <p className="newArrival__body__item__subtitle">Amazon wireless speakers</p>
             <Link to='/wishlist' className="newArrival__body__item__link">shop now</Link>
           </div>
-          <div className="newArrival__body__item gr-4 newArrival__body__item--gradient">
+          <div className="newArrival__body__item newArrival__body__item--small gr-4 newArrival__body__item--gradient">
             <img src={perfume} alt="perfume" className="newArrival__body__item__image"/>
             <p className="newArrival__body__item__title">Perfume</p>
             <p className="newArrival__body__item__subtitle">GUCCI INTENSE OUD EDP</p>
             <Link to='/wishlist' className="newArrival__body__item__link">shop now</Link>
           </div>
         </div>
+      </div>
+      <div className="block block-services services">
+        {services.map((service, index) => (
+          <div key={index} className="services__item">
+            <img src={service.icon} alt={service.title} className="services__item__image"/>
+            <div className="services__item__titles">
+              <p className="services__item__title">{service.title}</p>
+              <p className="services__item__subtitle">{service.subtitle}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   )

@@ -1,8 +1,24 @@
 import { Outlet, Link } from "react-router-dom";
 import logo from './images/Logo.svg';
 import './App.scss';
+import { useSelector } from "react-redux";
+import { Product } from "./types/Product";
+import { User } from "./types/User";
+import classNames from "classnames";
+
+interface State {
+  shop: {
+    wishlist: Product[];
+    cart: Product[];
+    user: User | null;
+  };
+}
 
 export const Header = () => {
+  const wishlist = useSelector((state: State) => state.shop.wishlist);
+  const cart = useSelector((state: State) => state.shop.cart);
+  const user = useSelector((state: State) => state.shop.user);
+
   return (
     <>
       <div className="upper">
@@ -15,7 +31,9 @@ export const Header = () => {
         </select>
       </div>
       <div className="header page__header" id="header">
-        <img src={logo} alt="logo" className="logo" />
+        <a href="/">
+          <img src={logo} alt="logo" className="logo" />
+        </a>
         <nav className="header__nav nav">
           <ul className="nav__list">
             <li className="nav__list__item">
@@ -38,9 +56,26 @@ export const Header = () => {
             <span className="search__icon icon"></span>
           </label>
           <div className="menu__icons">
-            <Link to="/wishlist" className="menu__fav icon"></Link>
-            <Link to="/cart" className="menu__cart icon"></Link>
-            <Link to="/account" className="menu__acc icon"></Link>
+            <Link
+              to="/wishlist"
+              className={classNames("menu__fav icon", {
+                "menu--full": wishlist.length > 0,
+                })}
+              data-content={wishlist.length}
+            />
+            <Link
+              to="/cart"
+              className={classNames("menu__cart icon", {
+                "menu--full": cart.length > 0,
+                })}
+              data-content={cart.length}
+            />
+            {user && (
+              <Link
+                to="/account"
+                className="menu__acc icon"
+              />
+            )}
           </div>
         </div>
       </div>

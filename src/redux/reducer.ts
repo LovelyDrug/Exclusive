@@ -5,15 +5,17 @@ import { User } from "../types/User";
 interface State {
   cart: Product[];
   wishlist: Product[];
-  user: User | null;
+  users: User[];
   products: Product[];
+  user: User | null;
 }
 
 const intialState: State = {
   cart: [],
   wishlist: [],
-  user: null,
+  users: [],
   products: [],
+  user: null,
 };
 
 export const slice = createSlice({
@@ -47,11 +49,33 @@ export const slice = createSlice({
       state.wishlist = state.wishlist.filter((item) => item.id !== action.payload.id);
     },
     setUser: (state, action) => {
-      state.user = action.payload;
+      const existingUser = state.users.find((user) => 
+      user.email === action.payload.email && user.password === action.payload.password
+      );
+      existingUser ? state.user = existingUser
+      : alert('User not found. Please create an account.');
+    },
+    addNewUser: (state, action) => {
+      if(state.users.find((user) => user.email === action.payload.email)) {
+        alert('User already exists. Please login.');
+        return;
+      };
+
+      state.users = [...state.users, action.payload];
+      alert('Account created successfully! Please login to continue.');
     },
   },
 });
 
-export const { setProducts, addToCart, removeFromCart, addToWishlist, removeFromWishlist, setUser } = slice.actions;
+export const { 
+  addNewUser,
+  modifyQuantity,
+  setProducts,
+  addToCart,
+  removeFromCart,
+  addToWishlist,
+  removeFromWishlist,
+  setUser
+} = slice.actions;
 
 export default slice.reducer;

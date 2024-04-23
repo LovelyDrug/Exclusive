@@ -22,7 +22,11 @@
     margin: auto;
     background-color: $c-secondary-1;
     border-radius: 4px;
-    
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
 
     &:hover {
       .card__add {
@@ -55,8 +59,20 @@
     text-align: center;
     font-weight: bold;
     opacity: 0%;
+    z-index: 1;
     
     transition: opacity 0.3s ease;
+  }
+
+  &__discount {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 4px 12px;
+    background-color: $c-secondary-accent;
+    color: $c-text-1;
+    border-radius: 4px;
+    font-size: 12px;
   }
 
   &__icon {
@@ -77,6 +93,17 @@
   }
 
   &__price {
-    color: $c-secondary-accent;
+    display: flex;
+    gap: 12px;
+
+    &__real {
+      color: $c-secondary-accent;
+    }
+
+    &__old {
+      opacity: 50%;
+      color: $c-text-button;
+      text-decoration: line-through;
+    }
   }
 }

@@ -6,13 +6,15 @@ import { User } from '../types/User';
 interface State {
   cart: Product[];
   wishlist: Product[];
-  user: User | null;
+  users: User[];
   products: Product[];
+  user: User | null;
 };
 
 let initialState: State = {
   cart: [],
   wishlist: [],
+  users: [],
   user: null,
   products: [],
 };

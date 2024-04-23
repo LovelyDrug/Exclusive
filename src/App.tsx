@@ -13,23 +13,14 @@ import { Account } from "./Account";
 import { Checkout } from "./Checkout";
 import { Cart } from "./Cart";
 import { ProductPage } from "./ProductPage";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { setProducts, setUser } from "./redux/reducer";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setProducts} from "./redux/reducer";
 
 function App() {
   const dispatch = useDispatch();
 
-  const newUser = {
-    name: 'John Doe',
-    email: '12342@snail.cim',
-    phone: '123-456-7890',
-    password: 'bf5g5hgb4eg',
-    address: '1234 Main St',
-  };
-
   useEffect(() => {
-    dispatch(setUser(newUser))
     fetch('/products.json')
       .then(response => response.json())
       .then(data => dispatch(setProducts(data)))

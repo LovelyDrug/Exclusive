@@ -14,7 +14,6 @@ interface Props {
   place: string;
 }
 
-
 export const Card: FC<Props> = (props: Props) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -26,18 +25,20 @@ export const Card: FC<Props> = (props: Props) => {
     navigate(`/product/${card.id}`);
   }, [card]);
 
-  const handleAddToCart = () => {
+  const handleAddToCart = useCallback(() => {
     dispatch(addToCart(card));
-  };
+  }, [card]);
 
   return (
     <div className={`card ${place}`}>
       <div className="card__image">
+        {card.discount && 
+          <span className="card__discount">-{card.discount}%</span>
+        }
         <img 
           src={photo}
           alt="product"
           className="card__product"
-          onClick={() => handleSetProduct()}
         />
         <div className="card__image__icons">
           {place === 'card--wishlist' && 
@@ -58,7 +59,12 @@ export const Card: FC<Props> = (props: Props) => {
               className="card__icon card--home__icon"
               onClick={() => dispatch(addToWishlist(card))}
               />
-              <img src={view} alt="view" className="card__icon card--home__icon"/>
+              <img
+                src={view}
+                alt="view"
+                className="card__icon card--home__icon"
+                onClick={() => handleSetProduct()}
+              />
             </>
           }
         </div>
@@ -66,7 +72,15 @@ export const Card: FC<Props> = (props: Props) => {
       </div>
       <div className="card__details">
         <p className="card__name">{name}</p>
-        <p className="card__price">{price}$</p>
+        <div className="card__price">
+          {card.discount ? 
+            <>
+            <span className="card__price__real">${price - price * card.discount / 100}</span>
+            <span className="card__price__old">${price}</span>
+            </>
+            : <span className="card__price__real">${price}</span>
+          }
+        </div>
       </div>
     </div>
   )

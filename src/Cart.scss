@@ -4,13 +4,21 @@
   &__table {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+  }
+
+  &__header {
+    margin-bottom: 40px;
   }
 
   &__body {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
+    margin-bottom: 24px;
+  }
+
+  &__footer {
+    margin-bottom: 80px;
   }
 
   &__image {
@@ -25,34 +33,30 @@
     gap: 8px;
   }
 
-  &__quantityInput {
-    display: inline-block;
+  &__quantity {
     position: relative;
-    width: 32px;
+
+    &Arrow {
+      position: absolute;
+      cursor: pointer;
+      right: 5px;
+    }
+  
+    &Input {
+    display: inline-block;
+    width: 50px;
     padding: 6px 12px;
     border-radius: 4px;
     border: 1px solid $c-text-2;
 
-    &::after {
-      content: url('/images/Drop-Up-Small.svg');
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    &::before {
-      content: url('/images/Drop-Down-Small.svg');
-      position: fixed;
-      width: 20px;
-      height: 20px;
-      right: 10px;
-      bottom: 50%;
-      transform: translateY(50%);
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        appearance: none;
+        margin: 0;
+      }
     }
   }
-  
+
   &__buttons {
     display: flex;
     justify-content: space-between;
@@ -130,4 +134,12 @@
     border-radius: 50%;
     cursor: pointer;
   }
+}
+
+.up {
+  top: 2px;
+}
+
+.down {
+  bottom: 2px;
 }

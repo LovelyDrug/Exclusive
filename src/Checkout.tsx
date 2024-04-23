@@ -160,7 +160,7 @@ export const Checkout: FC = () => {
             <p className="checkout__text">
               <p>Subtotal:</p>
               <p className="checkout__price">
-                {cart.reduce((acc, item) => +acc + +item.price, 0)}$
+                {cart.reduce((acc, item) => +acc + +item.price * item.quantity, 0)}$
               </p>
             </p>
             <div className="underline"></div>
@@ -172,7 +172,7 @@ export const Checkout: FC = () => {
             <p className="checkout__text">
               <p>Total:</p>
               <p className="checkout__price">
-                {cart.reduce((acc, item) => +acc + +item.price, 0)}$
+                {cart.reduce((acc, item) => +acc + +item.price * item.quantity, 0)}$
               </p>
             </p>
           </div>

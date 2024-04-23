@@ -6,4 +6,6 @@ export interface Product {
   rating: number;
   discount: number;
   quantity: number;
+  colors: string[];
+  description: string;
 }

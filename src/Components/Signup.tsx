@@ -1,23 +1,23 @@
 import { FC } from "react";
 import './App.scss'
+import google from './images/Icon-Google.svg';
 import { useDispatch } from "react-redux";
-import { setUser } from "./redux/reducer";
-import { useNavigate } from "react-router-dom";
+import { addNewUser } from "../redux/reducer";
 
-export const Login: FC = () => {
+export const Signup: FC = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-
+  
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const formData = new FormData(form);
-    dispatch(setUser({
+    const data = {
+      name: formData.get('name') as string,
       email: formData.get('email') as string,
       password: formData.get('password') as string
-    }));
+    }
+    dispatch(addNewUser(data));
     form.reset();
-    navigate('/');
   }
 
   return (
@@ -29,9 +29,16 @@ export const Login: FC = () => {
         onSubmit={handleSubmit}
       >
         <span className="form__text">
-          <h1 className="form__title">Log In to Exclusive</h1>
+          <h1 className="form__title">Create an account</h1>
           <p className="form__subtitle">Enter your details below</p>
         </span>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Name"
+          className="form__input"
+        />
         <input
           type="email"
           name="email"
@@ -46,9 +53,16 @@ export const Login: FC = () => {
           placeholder="Password"
           className="form__input"
         />
-        <span className="form__buttons">
-          <button type="submit" className="button button-red">Log In</button>
-          <a href='/' className="form__forgot">Forgot Password?</a>
+        <span className="form__signup-buttons">
+          <button type="submit" className="button button-red">Create Account</button>
+          <button className="button form__button-google">
+            <img src={google} alt="google" />
+            Sign up with Google
+          </button>
+        </span>
+        <span className="form__linkToLogin">
+          <p>Already have account?</p>
+          <a href="/login" className="form__link">Log in</a>
         </span>
       </form>
     </div>

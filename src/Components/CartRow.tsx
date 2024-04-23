@@ -1,6 +1,6 @@
 import { FC, useCallback, useState } from "react";
-import { removeFromCart, modifyQuantity } from "./redux/reducer";
-import { Product } from "./types/Product";
+import { removeFromCart, modifyQuantity } from "../redux/reducer";
+import { Product } from "../types/Product";
 import cancel from './images/icon-Cancel.svg';
 import up from './images/Drop-Up-Small.svg';
 import down from './images/Drop-Down-Small.svg';

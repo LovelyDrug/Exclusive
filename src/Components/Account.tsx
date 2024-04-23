@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useSelector } from "react-redux";
 import './Account.scss';
-import { User } from "./types/User";
+import { User } from "../types/User";
 
 interface State {
   shop: {

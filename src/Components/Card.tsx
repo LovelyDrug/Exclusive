@@ -4,9 +4,9 @@ import like from './images/Like.svg';
 import view from './images/View.svg';
 import remove from './images/Remove.svg';
 
-import { Product } from './types/Product';
+import { Product } from '../types/Product';
 import { useDispatch } from "react-redux";
-import { addToCart, addToWishlist, removeFromWishlist } from "./redux/reducer";
+import { addToCart, addToWishlist, removeFromWishlist } from "../redux/reducer";
 import { useNavigate } from "react-router-dom";
 
 interface Props {

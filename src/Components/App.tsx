@@ -15,7 +15,7 @@ import { Cart } from "./Cart";
 import { ProductPage } from "./ProductPage";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { setProducts} from "./redux/reducer";
+import { setProducts} from "../redux/reducer";
 
 function App() {
   const dispatch = useDispatch();

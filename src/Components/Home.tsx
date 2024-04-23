@@ -18,7 +18,7 @@ import JBL from './images/JBL.png';
 
 import { categories, services } from "./Info";
 import { useSelector } from "react-redux";
-import { Product } from "./types/Product";
+import { Product } from "../types/Product";
 import { Link } from "react-router-dom";
 
 interface State {

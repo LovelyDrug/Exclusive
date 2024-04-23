@@ -2,8 +2,8 @@ import { Outlet, Link } from "react-router-dom";
 import logo from './images/Logo.svg';
 import './App.scss';
 import { useSelector } from "react-redux";
-import { Product } from "./types/Product";
-import { User } from "./types/User";
+import { Product } from "../types/Product";
+import { User } from "../types/User";
 import classNames from "classnames";
 
 interface State {

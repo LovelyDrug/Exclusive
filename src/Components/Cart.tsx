@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { useSelector } from "react-redux";
-import { Product } from "./types/Product";
+import { Product } from "../types/Product";
 import './Cart.scss';
 import { Link } from "react-router-dom";
 import { CartRow } from "./CartRow";

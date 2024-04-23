@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { MoneyCardProps } from './types/MoneyCard';
+import { MoneyCardProps } from '../types/MoneyCard';
 
 
 export const MoneyCard: FC<MoneyCardProps> = (item: MoneyCardProps) => {

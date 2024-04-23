@@ -1,9 +1,9 @@
 import { FC } from "react";
-import { Product } from "./types/Product";
+import { Product } from "../types/Product";
 import { useDispatch, useSelector } from "react-redux";
 import { Card } from "./Card";
 import './Wishlist.scss';
-import { addToCart, removeFromWishlist } from "./redux/reducer";
+import { addToCart, removeFromWishlist } from "../redux/reducer";
 
 interface State {
   shop: {

@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import './ProductPage.scss';
-import { Product } from './types/Product';
+import { Product } from '../types/Product';
 import { useDispatch, useSelector } from 'react-redux';
 import { Card } from './Card';
 import { ColorCircle } from './ColorCircle';
@@ -8,7 +8,7 @@ import './ProductPage.scss';
 import wish from './images/Wishlist.svg';
 import minus from './images/icon-minus.svg';
 import plus from './images/icon-plus.svg';
-import { addToCart, addToWishlist } from './redux/reducer';
+import { addToCart, addToWishlist } from '../redux/reducer';
 import classNames from 'classnames';
 
 interface State {
